@@ -1,0 +1,179 @@
+.SingUpBody{
+    height: 100vh;
+    display: flex;
+}
+.SingUpTitle{
+    color: #a200ff;
+}
+.SingUp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #a200ff;
+    box-shadow: 0 8px 16px 0 rgba(162, 0, 255, 0.5);
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.inputdiv{
+    margin: 15px 0;
+    box-sizing: border-box;
+}
+
+.inputdiv input {
+    border: none;
+    border-bottom: 1px solid #a200ff;
+    width: 200px;
+    outline: none;
+    padding: 5px 0 0 30px;
+}
+.datadiv{
+    margin: 15px 0;
+}
+.checkboxdiv{
+    width: 230px;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+.datadiv input{
+    border: none;
+    border-bottom: 1px solid #a200ff;
+    width: 200px;
+    outline: none;
+    padding: 0px 0 0 30px;
+}
+.inputdiv input:hover{
+    border-bottom: 1px solid #b482d1;
+} 
+.buttondiv button{
+    border: none;
+    background-color: #a200ff;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 30px;
+    position: relative;
+}
+.buttondiv button:hover{
+    background-color: #b482d1;
+}
+i{
+    position: absolute;
+    color:#a200ff ;
+}
+#start{
+    color:#8c8c8c;
+}
+
+.checkboxdiv input{
+    border: 1px solid #a200ff;
+}
+.checkboxdiv label{
+    margin-left: 13px;
+    color: #a200ff;
+}
+.errormesing{
+    color: red;
+    font-size: 13px;
+    height: 5px;
+}
+.LinkSingup{
+  color: #a200ff;
+  text-decoration: none;
+}
+.LinkSingupDiv{
+  margin-top: 30px;
+}
+.LinkSingupDiv i{
+  margin-left: -33px ; 
+  margin-bottom: -2px;
+}
+.loader {
+    color:white;
+    font-size: 15px;
+    position: absolute;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+    height: 1em;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  }
+  @-webkit-keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @-webkit-keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
