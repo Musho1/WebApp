@@ -72,3 +72,12 @@ lds-ellipsis {
     }
   }
   
+
+
+  .popup{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    right: 0;
+}

@@ -1,6 +1,7 @@
 import LoginState from "../Store/LoginState"
 
 function LoginReducer(state=LoginState,action){
+    console.log(action)
     let temp={...state}
     if(action.type==='errorLogin'){
         temp.error=action.error

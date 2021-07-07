@@ -1,0 +1,19 @@
+.SuccesPopUp{
+    width: 300px;
+    height: 100px;
+    border: 1px solid #a200ff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    z-index: 999;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* text-align: center; */
+}
+.SuccesPopUp p{
+    margin-top: 50px;
+}
+.SuccesPopUpicon{
+    font-size: 55px;
+    color: rgb(40, 247, 40);
+}

@@ -24,8 +24,14 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
   }
   .container {
-    padding: 2px 16px;
+    padding: 15px 16px;
     text-align: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .container p{
+      margin: 0 3px;
   }
   .SaveCancleButon{
       display: flex;
@@ -45,7 +51,6 @@
   .savebutton:hover{
       background-color: rgb(64, 196, 64) !important;
   }
-
 
 
 

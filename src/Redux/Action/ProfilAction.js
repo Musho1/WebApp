@@ -23,3 +23,29 @@ const endGetUserByUid=(user)=>{
         user,
     }
 }
+
+
+
+
+export const SaveAvater=(elm)=>{
+    const uid=sessionStorage.getItem('uid')
+    return (dispatch)=>{
+        db.ref(`/users/${uid}/avatar`).set(elm).then((r)=>{
+            dispatch(successchangeavatar(elm))
+        })
+    }
+}
+const successchangeavatar=(value)=>{
+    return {
+        type:'successchangeavatar',
+        value,
+    }
+}
+
+
+
+export const ClosePopUp=()=>{
+    return {
+        type:'ClosePopUp'
+    }
+}
