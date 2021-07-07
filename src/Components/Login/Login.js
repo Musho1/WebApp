@@ -6,12 +6,11 @@ import './Login.css'
 function Login (){
     const [user,setuser]=useState({mail:'',password:''})
     const [error,seterror]=useState({errorMail:'',errorPassword:''})
-
+    const[Type,settype]=useState('password')
     const Error=useSelector((state)=>state.login.error)
     const {loading}=useSelector((state)=>state.login)
 
     const dispatch=useDispatch()    
-
 
     const LoginProfil=()=>{
         let send=true
@@ -34,12 +33,15 @@ function Login (){
         Object.values(error).forEach(elm=>{
             if(elm!==''){
                 send=false
+                
             }
         })
+       
         if(send){
             dispatch(LoginUser(user))
-        }
+        }        
     }
+    
     return <div className="LoginBody">
         <div className="Login">
             <div className="LoginTitle">
@@ -52,9 +54,13 @@ function Login (){
             </div>
             <div className="LoginDiv">
                 <i className="fas fa-lock"></i>
-                <input value={user.password} placeholder="Password" onChange={(e)=>setuser({...user,password:e.target.value})}></input>
+                <input value={user.password} placeholder="Password" type={Type} onChange={(e)=>setuser({...user,password:e.target.value})}></input>
+                {
+                   Type!=='password'?<i className="fas fa-eye-slash showpassword" onClick={()=>settype('password')}></i>:<i className="fas fa-eye showpassword" onClick={()=>settype('text')}></i>
+                }
                 <p className="errormessinge">{error.errorPassword}</p>
             </div>
+          
             <div>
                 <p className="errormessinge">{Error}</p>
             </div>

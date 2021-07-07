@@ -11,8 +11,9 @@ function LoginReducer(state=LoginState,action){
     }
     if(action.type==='endLogin'){
         temp.loading=false
-        console.log(action.value,'sss')
+        temp.isActive=true
         window.location.href="/profile"
+
 
     }
     return temp

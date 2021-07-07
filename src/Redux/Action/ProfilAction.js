@@ -8,7 +8,6 @@ const startGetuserByUdi=()=>{
 
 export const GetUserByUid=()=>{
     const uid=sessionStorage.getItem('uid')
-    console.log(uid)
     return (dispatch)=>{
         dispatch(startGetuserByUdi())
         db.ref().child("users").child(uid).get().then((r)=>{

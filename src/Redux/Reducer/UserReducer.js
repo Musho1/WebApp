@@ -6,6 +6,7 @@ function UserReducer(state=UserState,action){
         temp.loading=true
     }
     if(action.type==='endGetUserByUid'){
+        temp.loading=false
         temp.user=action.user
     }
     return temp    
