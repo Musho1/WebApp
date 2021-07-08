@@ -59,7 +59,6 @@
 }
 
 .closeCarusle:hover{
-    background-color: red;
     color: white;
     border-bottom-left-radius: 7px;
 }
@@ -75,4 +74,27 @@
 .caruselTextData{
     text-align: right;
     font-size: 13px;
+}
+.caruselTextp{
+    height: 100px;
+    width: 100%;
+    overflow-y: scroll;
+}
+.caruseComment{
+    position: absolute;
+    width: 290px;
+}
+.caruseComment textarea{
+    resize: none;
+    width: 260px;
+}
+
+.commentdiv{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.commentsend{
+    width: 100px  !important;
+    height: 30px !important;
 }
