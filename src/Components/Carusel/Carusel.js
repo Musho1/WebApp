@@ -65,7 +65,13 @@ function Carusel (props){
                                 <p>{time}</p>
                                 <p> {d.date} {d.type} ago</p>
                             </div>
-                            <p>{temp[index].text}</p>
+                            <p className="caruselTextp">{temp[index].text}</p>
+                            {/* <div className="caruseComment">
+                                <textarea placeholder="Comment..."></textarea>
+                                <div className="commentdiv">
+                                    <button className="commentsend">Send</button>
+                                </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
