@@ -12,7 +12,6 @@ function SelectImgReducer(state=PhotoState,action){
         temp.openPopUpImg=false
     }
     if(action.type==='OpenPopUpSuccessSaveimg'){
-        temp.Newphotos.push(action.value)
         temp.openPopUpImg=true
         temp.loading=false
     }
@@ -21,4 +20,9 @@ function SelectImgReducer(state=PhotoState,action){
     }
     return temp
 }
+
+
+
+
+
 export default SelectImgReducer

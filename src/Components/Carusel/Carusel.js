@@ -5,7 +5,6 @@ import './Carusel.css'
 
 function Carusel (props){
     const dispatch=useDispatch()
-    const [photos,setphotos]=useState([])
     const {Activeindex}=useSelector((state)=>state.carusel)
     const [index,setindex]=useState(Activeindex)
   
@@ -32,7 +31,27 @@ function Carusel (props){
             setindex(0)
         }
     }
-    console.log(temp.text)
+    const DatE=(date)=>{
+        const today=Date.now()
+        let one_day = 1000 * 60 * 60 * 24
+        let one_hours=1000 * 60 * 60
+        let one_minute=1000 *60 
+        let Today=today-(+date)
+        let day=Today/one_day
+        let hours=Today/one_hours
+        let minute=Today/one_minute
+        if(day>=1 && day<31){
+            return {date:Math.round(day),type:"Day"}
+        }
+        else if(day<1 && hours>=1){
+            return {date:Math.round(hours),type:"Hours"}
+        }
+        else {
+            return {date:Math.round(minute),type:'Minute'} 
+        }
+    }
+    let d=DatE(temp[index].date)
+    let time=new Date(temp[index].date).toDateString().toString()
     return <div className="carusel">
             <p className="closeCarusle" onClick={()=>dispatch(CloseCaruslePhotos())}>x</p>
             <button onClick={()=>setindexL(index)}>l</button>
@@ -42,7 +61,10 @@ function Carusel (props){
                     </div>
                     <div className="caruselTextDiv">
                         <div className="caruselText">
-                            <p className="caruselTextData">{temp[index].date}</p>
+                            <div className="caruselTextData">
+                                <p>{time}</p>
+                                <p> {d.date} {d.type} ago</p>
+                            </div>
                             <p>{temp[index].text}</p>
                         </div>
                     </div>

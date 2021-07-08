@@ -18,7 +18,6 @@ function Profile(props){
     const {openPopUpImg}=useSelector((state)=>state.photo)
     const {openCarusle}=useSelector((state)=>state.carusel)
     const {photos}=useSelector((state)=>state.user.user)
-    console.log(photos)
     if(imgpogup){
         {
             setTimeout(()=>{
@@ -48,7 +47,7 @@ function Profile(props){
             <div>
                 <NavBar></NavBar>
             </div>
-            {props.props || openCarusle&& 
+            {(props.props || openCarusle) && 
                 <img className='backopacity' src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPstb96OBKy17BhjwJ5hXTU126JHc7FXActjt9zgC_STeY7Wq1SXEjTyXRtJib-rd9_gw&usqp=CAU'}></img>
             }
             <div className="popup">

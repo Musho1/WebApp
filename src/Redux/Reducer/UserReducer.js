@@ -16,6 +16,12 @@ function UserReducer(state=UserState,action){
     if(action.type==='ClosePopUp'){
         temp.imgpogup=false
     }
+    if(action.type==='addphoto'){
+        let d=Date.now()
+        temp.user.photos={...temp.user.photos,d:action.value}
+    }
+
+
     return temp    
 }
 export default UserReducer

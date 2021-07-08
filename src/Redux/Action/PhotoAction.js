@@ -9,13 +9,22 @@ export const SevePhoto=(elm,text)=>{
            firebase.storage().ref().child(`Photos/${uid}/${uid+d}`).getDownloadURL().then((url)=>{
                 db.ref(`/users/${uid}/photos`).push({img:url,text:text,date:d}).then((r)=>{
                     dispatch(closeSelectImg())
-                    dispatch(OpenPopUpSuccessSaveimg({img:url,text:text,date:d}))
-                    
+                    dispatch(OpenPopUpSuccessSaveimg())
+                    dispatch(addphoto({img:url,text:text,date:d}))
                 })
             })
         })
     }
 }
+
+
+export const addphoto=(value)=>{
+    return {
+        type:'addphoto',
+        value
+    }
+}
+
 
 export const closeSelectImg=()=>{
     return{

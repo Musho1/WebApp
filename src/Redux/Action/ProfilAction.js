@@ -43,7 +43,6 @@ export const SaveAvater=(elm)=>{
     }
 }
 const successchangeavatar=(value)=>{
-    console.log(value)
     return {
         type:'successchangeavatar',
         value,
