@@ -8,13 +8,13 @@ const startSingUpUser=()=>{
     }
 }
 
-export const SingUpUser=(user)=>{
+export const SingUpUser=(user,history)=>{
     return (dispatch)=>{
         dispatch(startSingUpUser())
         firebase.auth().createUserWithEmailAndPassword(user.mail,user.password).then((r)=>{
             dispatch(endSingUpUser())
             db.ref(`/users/${r.user.uid}`).set({...user,uid:r.user.uid})
-            // window.location.href='/'
+            history.push('/')
         })
     }
 }

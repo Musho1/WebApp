@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { LoginUser } from '../../Redux/Action/LoginAction'
 import './Login.css'
 function Login (){
@@ -11,6 +11,8 @@ function Login (){
     const {loading}=useSelector((state)=>state.login)
 
     const dispatch=useDispatch()    
+
+    const history=useHistory()
 
     const LoginProfil=()=>{
         let send=true
@@ -38,7 +40,7 @@ function Login (){
         })
        
         if(send){
-            dispatch(LoginUser(user))
+            dispatch(LoginUser(user,history))
         }        
     }
     

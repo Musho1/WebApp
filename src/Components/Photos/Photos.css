@@ -1,0 +1,49 @@
+.photostitle{
+    text-align: center;
+    color: #a200ff;
+
+}
+.filediv{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.PhotosCardDiv{
+    display: flex;
+    margin: 0 90px;
+    flex-wrap: wrap;
+
+}
+
+
+
+.my {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+.label {
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font: 14px/50px Tahoma;
+    transition: all 0.18s ease-in-out;
+    border: 1px solid #a200ff;
+    color: #333;
+}
+
+.PhotoSelecDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.label:hover {
+    color: white;
+    background: #a200ff;
+}

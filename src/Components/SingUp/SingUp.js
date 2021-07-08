@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { SingUpUser } from '../../Redux/Action/SingUpAction'
 import './SingUp.css'
 function SingUp(){
@@ -8,6 +8,7 @@ function SingUp(){
     const [error,seterror]=useState({errorName:'',errorSurname:'',errorMail:'',errorPassword:'',errorData:'',errorGender:''})
     const [male,setmale]=useState(false)
     const [female,setfemale]=useState(false)
+    const history=useHistory()
     const dispath=useDispatch()
 
     const {loading}=useSelector(state=>state.singup)
@@ -121,7 +122,7 @@ function SingUp(){
         })
 
         if(sent){
-            dispath(SingUpUser(user))
+            dispath(SingUpUser(user,history))
         }
     }
 
@@ -175,7 +176,7 @@ function SingUp(){
                 <button disabled={loading} onClick={()=>SaveUser()}>Save   {loading && <div className="loader">Loading...</div> }</button>
             </div>
             <div className="LinkSingupDiv">
-                <Link className="LinkSingup" to="/"><i class="fas fa-arrow-left"></i> Aleredy have an account</Link>
+                <Link className="LinkSingup" to="/"><i className="fas fa-arrow-left"></i> Aleredy have an account</Link>
             </div>
         </div>
     </div>

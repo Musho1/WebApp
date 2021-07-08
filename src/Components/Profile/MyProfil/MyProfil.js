@@ -5,11 +5,11 @@ import './MyProfil.css'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { SaveAvater } from '../../../Redux/Action/ProfilAction'
-import SuccesPopUp from '../../PopUp/SuccesPopUp'
 function MyProfil(){
     const {user}=useSelector(state=>state.user)
     const {SuccessChangeAvatar}=useSelector(state=>state.user)
     const [changeAvatar,setchangeAvatar]=useState('')
+    const [change,setchange]=useState('')
     const [showbutton,setshowbutton]=useState(false)
     const dispatch=useDispatch()
     return <div className="MyProfil">
@@ -36,7 +36,9 @@ function MyProfil(){
                 <p>{user.surname}</p>
             </div>
             <div className="file-input">
-                <input type="file" id="file" className="file"  onChange={e=>setchangeAvatar(URL.createObjectURL(e.target.files[0]))}/>
+                <input type="file" id="file" className="file"  onChange={e=>{setchangeAvatar(URL.createObjectURL(e.target.files[0]))
+                                                                            setchange(e.target.files[0])
+                }}/>
                 <label htmlFor="file" onClick={()=>setshowbutton(true)}><i className="fas fa-camera"></i></label>
             </div>
             
@@ -48,7 +50,7 @@ function MyProfil(){
                 }}>Cancle</button>
                     <button className="savebutton" onClick={()=>{
                         setshowbutton(false)
-                        dispatch(SaveAvater(changeAvatar))}}
+                        dispatch(SaveAvater(change))}}
                      >Save</button>
                         
                 </div>

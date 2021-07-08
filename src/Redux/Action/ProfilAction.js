@@ -1,4 +1,7 @@
 import {db} from '../../firebase'
+import firebase from 'firebase'
+
+
 const startGetuserByUdi=()=>{
     return{
         type:'startGetuserByUdi'
@@ -30,12 +33,17 @@ const endGetUserByUid=(user)=>{
 export const SaveAvater=(elm)=>{
     const uid=sessionStorage.getItem('uid')
     return (dispatch)=>{
-        db.ref(`/users/${uid}/avatar`).set(elm).then((r)=>{
-            dispatch(successchangeavatar(elm))
+        firebase.storage().ref(`images/${uid}`).child(uid).put(elm).then((r)=>{
+            firebase.storage().ref().child(`images/${uid}`).getDownloadURL().then((url)=>{
+                db.ref(`/users/${uid}/avatar`).set(url).then((r)=>{
+                    dispatch(successchangeavatar(url))
+                })
+            })
         })
     }
 }
 const successchangeavatar=(value)=>{
+    console.log(value)
     return {
         type:'successchangeavatar',
         value,

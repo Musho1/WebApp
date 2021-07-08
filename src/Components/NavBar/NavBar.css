@@ -13,6 +13,9 @@ ul{
     height: 100%;
     margin-right: 50px;
 }
+li{
+    margin: 0 35px;
+}
  li i{
     color: white;
     position: absolute;
@@ -22,4 +25,7 @@ ul{
 .logOut i{
     margin-left: 13px;
     margin-top: 4px;
+}
+.link{
+    color: white !important;
 }

@@ -1,7 +1,6 @@
 import LoginState from "../Store/LoginState"
 
 function LoginReducer(state=LoginState,action){
-    console.log(action)
     let temp={...state}
     if(action.type==='errorLogin'){
         temp.error=action.error
@@ -13,9 +12,7 @@ function LoginReducer(state=LoginState,action){
     if(action.type==='endLogin'){
         temp.loading=false
         temp.isActive=true
-        window.location.href="/profile"
-
-
+        // window.location.href="/profile"
     }
     return temp
 }
