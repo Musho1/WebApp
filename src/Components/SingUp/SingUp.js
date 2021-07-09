@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
-import { SingUpUser } from '../../Redux/Action/SingUpAction'
+import { closeSingUpPopup, SingUpUser } from '../../Redux/Action/SingUpAction'
 import ErrorPopUp from '../PopUp/ErrorPopUp'
 import './SingUp.css'
 function SingUp(){
@@ -27,9 +27,20 @@ function SingUp(){
         else {
             setfemale(!gender)
         }
-
-        
     }
+
+
+    if(errorSigup!==''){
+        {
+            setTimeout(()=>{
+                
+                dispath(closeSingUpPopup())
+            },[5000])
+        }
+    }
+
+
+
     const ValidateEmail=(input)=> {
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 

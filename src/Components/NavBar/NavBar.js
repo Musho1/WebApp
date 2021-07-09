@@ -1,13 +1,16 @@
+import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './NavBar.css'
 function NavBar(){
     const history=useHistory()
+    const dispatch=useDispatch()
     const LogOut=()=>{
         sessionStorage.removeItem('uid')
         history.push('/')
 
     }
+
     return <div className="NavBar">
         <nav className="NavBar">
             <ul>
@@ -21,7 +24,7 @@ function NavBar(){
             <ul>
                 <li>
                     <Link className="link" to="search">
-                        <i class="fas fa-search"></i> Search
+                        <i className="fas fa-search"></i> Search
                     </Link>
                 </li>
                 <li>

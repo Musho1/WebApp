@@ -26,10 +26,6 @@ const endGetUserByUid=(user)=>{
         user,
     }
 }
-
-
-
-
 export const SaveAvater=(elm)=>{
     const uid=sessionStorage.getItem('uid')
     return (dispatch)=>{

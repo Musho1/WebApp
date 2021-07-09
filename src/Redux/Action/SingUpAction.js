@@ -17,7 +17,6 @@ export const SingUpUser=(user,history)=>{
             history.push('/')
         })
         .catch((error)=>{
-            console.log(error.message)
             dispatch(ErrorSingUp(error))
         })
     }
@@ -35,5 +34,12 @@ const ErrorSingUp=(error)=>{
     return {
         type:'ErrorSingUp',
         error
+    }
+}
+
+
+export const closeSingUpPopup=()=>{
+    return {
+        type:'closeSingUpPopup',
     }
 }

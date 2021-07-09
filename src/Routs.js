@@ -5,15 +5,18 @@ import Profile from "./Components/Profile/Profile";
 import Search from "./Components/Search/Search";
 import Settings from "./Components/Settings/Settings";
 import SingUp from './Components/SingUp/SingUp'
+import UserAccaunt from "./Components/UserAccaunt/UserAccaunt";
 function Routs(){
     return <BrowserRouter>
         <Switch>
+            <Route path="/user/:uid" component={UserAccaunt}/>
             <Route path="/search" component={Search}  ></Route>
             <Route path="/settings" component={Settings}></Route>
             <Route path='/photos' component={Photos}></Route>
             <Route path='/profile' component={Profile}></Route>
             <Route path="/signup" component={SingUp}></Route>
             <Route path="/" component={Login}></Route>
+
             
         </Switch>
     </BrowserRouter>

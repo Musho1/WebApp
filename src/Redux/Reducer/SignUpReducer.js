@@ -12,6 +12,9 @@ function  SignUpReducer(state=SignUpState,action){
         temp.loading=false
         temp.errorSigup=action.error.message
     }
+    if(action.type==='closeSingUpPopup'){
+        temp.errorSigup=''
+    }
     return temp
 }
 export default SignUpReducer

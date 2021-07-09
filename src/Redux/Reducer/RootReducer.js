@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import CaruselReducer from './CarusleReducer'
+import UserAccauntReducer from './UserAccauntReducer'
 import LoginReducer from './LoginReducer'
 import SearchReducer from './SearchReducer'
 import SelectImgReducer from './SelectImgReducer'
@@ -12,5 +13,6 @@ export default combineReducers({
     user:UserReducer,
     photo:SelectImgReducer,
     carusel:CaruselReducer,
-    search:SearchReducer
+    search:SearchReducer,
+    useraccaunt:UserAccauntReducer,
 })
