@@ -129,12 +129,10 @@ function Settings (){
                     <label htmlFor="da">Gender</label>
                     <div className="GenderDivSettings">
                         <div>
-                            <i className="fas fa-male"></i>
                             <label>male</label>
                             <input  value='male' checked={usernewdate.gender==='male'} type="checkbox" id="da" onChange={(e)=>{setusernewdate({...usernewdate,gender:'male'})}} ></input>
                         </div>
                         <div>
-                            <i className="fas fa-female"></i>
                             <label>female</label>
                             <input value='female' checked={usernewdate.gender==='female'} type="checkbox" id="da" onChange={(e)=>{setusernewdate({...usernewdate,gender:'female'})}}></input>
                         </div>

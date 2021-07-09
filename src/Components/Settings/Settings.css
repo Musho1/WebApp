@@ -29,14 +29,7 @@
     width: 250px;
     display: flex;
     margin-top: 15px;
-    justify-content: space-around;
-}
-.GenderDivSettings i {
-    /* margin: 0 -15px !important; */
-    /* margin-top: 5px !important; */
-}
-.GenderDivSettings label{
-    margin:0 15px;
+    justify-content: space-between;
 }
 .SettingsButton button{
     border: 1px solid #a200ff;
@@ -49,15 +42,6 @@
     background-color: #a200ff;
     color: white ;
 }
-
-
-
-
-
-
-
-
-
 .loader {
     color:red;
     font-size: 15px;

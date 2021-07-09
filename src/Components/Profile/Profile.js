@@ -9,6 +9,7 @@ import Carusel from '../Carusel/Carusel'
 import './profil.css'
 import { closeSaveNewSettings } from "../../Redux/Action/SettingsAction"
 
+
 function Profile(props){
     const dispatch=useDispatch()
     useEffect(()=>{
@@ -62,6 +63,7 @@ function Profile(props){
                 {imgpogup && <SuccesPopUp text={'Success change Avatar'} />}
                 {openPopUpImg && <SuccesPopUp text={'Success save photo'} />}
                 {settingPopUp && <SuccesPopUp text={'Success change data'} />}
+                
              </div>
 
             {openCarusle &&

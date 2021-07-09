@@ -8,6 +8,10 @@ function  SignUpReducer(state=SignUpState,action){
     if(action.type==="endSingUpUser"){
         temp.loading=false
     }
+    if(action.type==='ErrorSingUp'){
+        temp.loading=false
+        temp.errorSigup=action.error.message
+    }
     return temp
 }
 export default SignUpReducer

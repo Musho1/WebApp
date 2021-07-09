@@ -16,6 +16,10 @@ export const SingUpUser=(user,history)=>{
             db.ref(`/users/${r.user.uid}`).set({...user,uid:r.user.uid})
             history.push('/')
         })
+        .catch((error)=>{
+            console.log(error.message)
+            dispatch(ErrorSingUp(error))
+        })
     }
 }
 
@@ -23,5 +27,13 @@ export const SingUpUser=(user,history)=>{
 const endSingUpUser=()=>{
     return {
         type:"endSingUpUser"
+    }
+}
+
+
+const ErrorSingUp=(error)=>{
+    return {
+        type:'ErrorSingUp',
+        error
     }
 }

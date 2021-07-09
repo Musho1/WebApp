@@ -20,6 +20,11 @@ function NavBar(){
             </ul>
             <ul>
                 <li>
+                    <Link className="link" to="search">
+                        <i class="fas fa-search"></i> Search
+                    </Link>
+                </li>
+                <li>
                     <Link className="link" to="/settings">
                         <i className="fas fa-cogs"></i> Settings
                     </Link>

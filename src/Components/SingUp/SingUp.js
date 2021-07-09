@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
 import { SingUpUser } from '../../Redux/Action/SingUpAction'
+import ErrorPopUp from '../PopUp/ErrorPopUp'
 import './SingUp.css'
 function SingUp(){
     const [user,setuser]=useState({name:'',surname:'',mail:'',password:"",date:'',gender:''})
     const [error,seterror]=useState({errorName:'',errorSurname:'',errorMail:'',errorPassword:'',errorData:'',errorGender:''})
+    const {errorSigup}=useSelector((state)=>state.singup)
     const [male,setmale]=useState(false)
     const [female,setfemale]=useState(false)
     const history=useHistory()
@@ -28,7 +30,6 @@ function SingUp(){
 
         
     }
-
     const ValidateEmail=(input)=> {
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -127,6 +128,9 @@ function SingUp(){
     }
 
     return <div className="SingUpBody">
+        <div className="popup">
+            {errorSigup!=='' && <ErrorPopUp text={errorSigup} />}
+        </div>
         <div  className="SingUp">  
             <div className="SingUpTitle">
                 <h1>Sing Up</h1>

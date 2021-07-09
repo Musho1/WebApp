@@ -78,15 +78,14 @@ lds-ellipsis {
       transform: translate(24px, 0);
     }
   }
-  
-
-
   .popup{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     position: absolute;
     right: 0;
+    font-size: 13px;
+    text-align: center;
 }
 .profilitem{
   display: flex;
