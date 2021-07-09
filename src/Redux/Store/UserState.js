@@ -2,5 +2,7 @@ export default{
     user:{},
     loading:false,
     SuccessChangeAvatar:'',
-    imgpogup:false
+    imgpogup:false,
+    settingLoadin:false,
+    settingPopUp:false
 }

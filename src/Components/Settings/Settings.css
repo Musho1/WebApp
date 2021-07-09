@@ -1,103 +1,65 @@
-.SingUpBody{
-    height: 100vh;
-    display: flex;
-}
-.SingUpTitle{
-    color: #a200ff;
-}
-.SingUp{
+.settings{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border: 1px solid #a200ff;
-    box-shadow: 0 8px 16px 0 rgba(162, 0, 255, 0.5);
-    background-color: white;
-    width: 500px;
-    margin: auto;
-    padding: 40px;
-    box-sizing: border-box;
+    justify-content: center;
+    color: #a200ff;    
 }
-
-.inputdiv{
-    margin: 15px 0;
-    box-sizing: border-box;
+.settingsDiv{
+    margin-top: 30px;
 }
-
-.inputdiv input {
+.lableinputdiv{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+}
+.lableinputdiv input{
+    outline: none;
     border: none;
     border-bottom: 1px solid #a200ff;
-    width: 200px;
-    outline: none;
-    padding: 5px 0 0 30px;
 }
-.datadiv{
-    margin: 15px 0;
-}
-.checkboxdiv{
-    width: 230px;
-    display: flex;
-    margin-top: 15px;
+.GenderDivSettings{
+    margin-top:15px ;
+    display: flex !important;
     justify-content: space-between;
 }
-.datadiv input{
-    border: none;
-    border-bottom: 1px solid #a200ff;
-    width: 200px;
-    outline: none;
-    padding: 0px 0 0 30px;
-}
-.inputdiv input:hover{
-    border-bottom: 1px solid #b482d1;
-} 
-.buttondiv button{
-    border: none;
-    background-color: #a200ff;
-    color: white;
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-    margin-top: 30px;
-    position: relative;
-}
-.buttondiv button:hover{
-    background-color: #b482d1;
-}
-i{
-    position: absolute;
-    color:#a200ff ;
-}
-#start{
-    color:#8c8c8c;
-}
 
-.checkboxdiv input{
-    border: 1px solid #a200ff;
+
+.GenderDivSettings{
+    width: 250px;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
 }
-.checkboxdiv label{
-    margin-left: 13px;
+.GenderDivSettings i {
+    /* margin: 0 -15px !important; */
+    /* margin-top: 5px !important; */
+}
+.GenderDivSettings label{
+    margin:0 15px;
+}
+.SettingsButton button{
+    border: 1px solid #a200ff;
+    background-color: white;
+    outline: none;
+    width: 90px;
     color: #a200ff;
 }
-.errormesing{
-    color: red;
-    font-size: 13px;
-    height: 5px;
+.SettingsButton button:hover{
+    background-color: #a200ff;
+    color: white ;
 }
-.LinkSingup{
-  color: #a200ff;
-  text-decoration: none;
-}
-.LinkSingupDiv{
-  margin-top: 30px;
-}
-.LinkSingupDiv i{
-  margin-left: -33px ; 
-  margin-bottom: -2px;
-}
+
+
+
+
+
+
+
 
 
 .loader {
-    color:white;
+    color:red;
     font-size: 15px;
     position: absolute;
     text-indent: -9999em;
