@@ -12,6 +12,7 @@ function NavBar(){
     }
 
     return <div className="NavBar">
+        <button><i className="fas fa-bars"></i></button>
         <nav className="NavBar">
             <ul>
                 <li> <i className="fas fa-home"></i> Home</li>

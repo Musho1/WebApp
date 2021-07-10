@@ -29,3 +29,34 @@ li{
 .link{
     color: white !important;
 }
+.NavBar button{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .NavBar button {
+        display: block;
+        margin: auto;
+        border:none;
+        width: 50px;
+        height: 50px;
+        background-color: #a200ff;
+        color: white !important;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        outline: none;
+    }
+    .NavBar button i{
+        color: wheat;
+        width:10px;
+        height: 10px;
+    }
+    ul{
+        display: none;
+    }
+    .NavBar{
+        display: flex;
+        justify-content: start;
+    }
+  }

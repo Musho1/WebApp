@@ -1,6 +1,6 @@
 .carusel{
     width: 60%;
-    height: 700px;
+    max-height: 700px;
     border: 1px solid #a200ff;
     position: absolute;
     left: 0;
