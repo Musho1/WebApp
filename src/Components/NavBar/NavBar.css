@@ -32,8 +32,17 @@ li{
 .NavBar button{
     display: none;
 }
+.navMobile{
+    display: none;
+}
 
 @media only screen and (max-width: 600px) {
+    .navMobile{
+        display: block;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
     .NavBar button {
         display: block;
         margin: auto;

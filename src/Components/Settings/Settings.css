@@ -11,7 +11,7 @@
 .lableinputdiv{
     display: flex;
     flex-direction: column;
-    margin: 30px 0;
+    margin: 24px 0;
 }
 .lableinputdiv input{
     outline: none;
@@ -30,6 +30,9 @@
     display: flex;
     margin-top: 15px;
     justify-content: space-between;
+}
+.SettingsButton{
+  margin-bottom: 35px;
 }
 .SettingsButton button{
     border: 1px solid #a200ff;

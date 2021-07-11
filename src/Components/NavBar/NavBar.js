@@ -12,7 +12,8 @@ function NavBar(){
     }
 
     return <div className="NavBar">
-        <button><i className="fas fa-bars"></i></button>
+        
+
         <nav className="NavBar">
             <ul>
                 <li> <i className="fas fa-home"></i> Home</li>
@@ -34,6 +35,23 @@ function NavBar(){
                     </Link>
                 </li>
                 <li className='logOut' onClick={()=>LogOut()}>Log out <i className="fas fa-sign-out-alt"></i> </li>
+            </ul>
+
+
+
+            <ul className="navMobile">
+                <li>
+                    <Link to=""><i className="fas fa-home"></i></Link>
+                </li>
+                <li>
+                    <Link to="/photos"><i className="far fa-image"></i></Link>
+                </li>
+                <li>
+                    <Link to="settings"><i className="fas fa-cogs"></i></Link>
+                </li>
+                {/* <li>
+                    <Link><i class="far fa-comment"></i></Link>
+                </li> */}
             </ul>
         </nav>
     </div>
