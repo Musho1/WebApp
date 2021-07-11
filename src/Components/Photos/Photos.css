@@ -10,7 +10,7 @@
 }
 .PhotosCardDiv{
     display: flex;
-    margin: 0 90px;
+    /* margin: 0 90px; */
     flex-wrap: wrap;
 
 }

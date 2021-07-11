@@ -61,17 +61,22 @@ function Carusel (props){
                     </div>
                     <div className="caruselTextDiv">
                         <div className="caruselText">
+                           <div className="Likecomment">
+                               <div>
+                                    <i className="far fa-heart"></i>
+                               </div>
+                               <div>
+                                    <i className="far fa-comment"></i>
+                               </div>
+                               <div>
+                                    <i className="far fa-bookmark"></i>
+                               </div>
+                           </div>
+                            <p className="caruselTextp">{temp[index].text}</p>
                             <div className="caruselTextData">
                                 <p>{time}</p>
                                 <p> {d.date} {d.type} ago</p>
                             </div>
-                            <p className="caruselTextp">{temp[index].text}</p>
-                            {/* <div className="caruseComment">
-                                <textarea placeholder="Comment..."></textarea>
-                                <div className="commentdiv">
-                                    <button className="commentsend">Send</button>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 .CardPhotosdate{
     width: 90%;
@@ -42,3 +42,24 @@
     left: 0;
     margin: auto;
 }
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .PhotoCard{
+        height: 200px;
+        height: 410px;
+    }
+    .CardPhotosText{
+        display: none;
+    }
+    .PhotoCard{
+        width: 100%;
+        margin: 15px 0px;
+    }
+    .CardPhotosDiv{
+        width: 100%;
+    }
+   
+  }

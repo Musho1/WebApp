@@ -5,7 +5,7 @@
     margin-top: 18px;
 }
 .avatar{
-    width: 150px;
+    width: 114px;
     height: 150px;
     object-fit: cover;
 }
@@ -22,7 +22,7 @@
     align-items: center;
 }
 .profiledata:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);   
   }
   .container {
     padding: 15px 16px;
@@ -38,7 +38,7 @@
       display: flex;
       margin: 10px 0;
       justify-content: space-between;
-      padding: 0 12px;
+      padding: 0 12px;  
   }
   .SaveCancleButon button {
       width: 70px;
@@ -75,3 +75,26 @@
     cursor: pointer;
     transition: transform .2s ease-out;
   }
+
+
+
+
+  
+@media only screen and (max-width: 600px) {
+    
+    .MyProfil{
+      border-radius: 50%;
+      border: none;
+      width: 100px;
+      margin-top: -4px;
+    }
+    .profiledata{
+        border: none;
+        box-shadow: none;
+        width: 100px;
+    }
+    .container{
+        display: none;
+    }
+  }
+

@@ -1,8 +1,9 @@
 .carusel{
-    width: 60%;
-    max-height: 700px;
+    width: 572px;
+    max-height: 535px;
     border: 1px solid #a200ff;
     position: absolute;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
     left: 0;
     top: 0;
     right: 0;
@@ -12,18 +13,36 @@
     background-color: white;
     
 }
+.Likecomment{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+}
+.caruselTextp{
+    width: 330px;
+}
+.Likecomment div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
 .carusel{
     display: flex;
 }
 .carusel button{
-    width: 40px;
-    height: 70px;
-    margin: auto 10px;
+    width: 20px;
+    height: 23px;
+    margin: auto -10px;
     border: 1px solid #a200ff;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
     background-color: white;
     outline: none;
     position: relative;
+    z-index: 999;
 }
 .carusel button:hover{
     background-color: #a200ff;
@@ -33,14 +52,17 @@
 .carusel button:hover i{
     color: white !important;
 } 
+.caruselTextDiv{
+  margin-top: 20px;
+}
 .carusel button i{
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 25px;
     margin: auto;
     font-size: 25px;
 }
@@ -48,22 +70,17 @@
 .caruselitem{
     width: 100%;
     height: 100%;
-    position: relative;
-    display: flex;
+    flex-direction: column;
 }
 .Caruselitemimg{
-    width: 70%;
-    height: 90%;
-    position: absolute;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
-    top: 0;
-    bottom: 0;
-    margin: auto;    
+    position: relative;
+    width: 100%;
+    height: 81%;
 }
 .Caruselitemimg img{
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .closeCarusle{
     position: absolute;
@@ -78,23 +95,15 @@
     border-bottom-left-radius: 7px;
     background-color: red;
 }
-.caruselTextDiv{
-    position: absolute;
-    right: 0; 
-    width: 30%;
-    height: 100%;
-}
+
 .caruselText{
-    margin: 15px;
+    display: flex;
+
 }
 .caruselTextData{
     text-align: right;
-    font-size: 13px;
-}
-.caruselTextp{
-    height: 100px;
-    width: 100%;
-    overflow-y: scroll;
+    width: 150px;
+    font-size: 10px;
 }
 .caruseComment{
     position: absolute;
@@ -114,3 +123,10 @@
     width: 100px  !important;
     height: 30px !important;
 }
+
+@media only screen and (max-width: 600px) {
+    .carusel{
+        width: 100%;
+    }
+   
+  }
