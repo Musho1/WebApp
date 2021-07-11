@@ -9,7 +9,6 @@ import Carusel from '../Carusel/Carusel'
 import './profil.css'
 import { closeSaveNewSettings } from "../../Redux/Action/SettingsAction"
 
-
 function Profile(props){
     const dispatch=useDispatch()
     useEffect(()=>{
@@ -19,6 +18,8 @@ function Profile(props){
     const {openPopUpImg}=useSelector((state)=>state.photo)
     const {openCarusle}=useSelector((state)=>state.carusel)
     const {photos}=useSelector((state)=>state.user.user)
+
+    console.log(openCarusle)
     if(imgpogup){
         {
             setTimeout(()=>{
@@ -51,8 +52,7 @@ function Profile(props){
         </div>
     }
     else{
-        return <div className="profil" >
-            
+        return <div  className="profil" className={openCarusle && 'OpenCarusel'} >
             <div>
                 <NavBar></NavBar>
             </div>

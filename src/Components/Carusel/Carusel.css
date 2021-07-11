@@ -1,3 +1,4 @@
+
 .carusel{
     width: 572px;
     max-height: 535px;
@@ -11,7 +12,6 @@
     margin: auto;
     z-index: 999;
     background-color: white;
-    
 }
 .Likecomment{
     display: flex;
@@ -88,6 +88,7 @@
     height: 30px;
     width: 30px;
     text-align: center;
+    z-index: 1000;
 }
 
 .closeCarusle:hover{
@@ -128,5 +129,16 @@
     .carusel{
         width: 100%;
     }
-   
+    .carusel button{
+        height: 330px;
+        border: none;
+        box-shadow: none;
+        opacity: 0;
+    }
+    .Likecomment{
+        margin: 0;
+    }
+    .caruselText{
+        margin: 10px;
+    }
   }

@@ -54,7 +54,7 @@ function Carusel (props){
     let time=new Date(temp[index].date).toDateString().toString()
     return <div className="carusel">
             <p className="closeCarusle" onClick={()=>dispatch(CloseCaruslePhotos())}>x</p>
-            <button onClick={()=>setindexL(index)}><i className="fas fa-angle-left"></i></button>
+            <button onClick={()=>setindexL(index)}><i className="fas fa-angle-left "></i></button>
                 <div className="caruselitem">
                     <div className="Caruselitemimg">
                         <img src={temp[index].img}></img>
@@ -80,7 +80,7 @@ function Carusel (props){
                         </div>
                     </div>
                 </div>
-            <button onClick={()=>setindexR(index)}><i className="fas fa-angle-right"></i></button>
+            <button onClick={()=>setindexR(index)}><i className="fas fa-angle-right button1"></i></button>
     </div>
 } 
 export default Carusel

@@ -87,6 +87,9 @@ lds-ellipsis {
     font-size: 13px;
     text-align: center;
 }
+.OpenCarusel{
+  overflow: hidden;
+}
 .profilitem{
   display: flex;
 }
