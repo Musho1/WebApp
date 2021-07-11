@@ -7,31 +7,41 @@ import SuccesPopUp from "../PopUp/SuccesPopUp"
 import MyProfil from "./MyProfil/MyProfil"
 import Carusel from '../Carusel/Carusel'
 import './profil.css'
+import { closeSaveNewSettings } from "../../Redux/Action/SettingsAction"
 
 function Profile(props){
     const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(GetUserByUid())
     },[])
-    const {loading}=useSelector(state=>state.user)
-    const {imgpogup}=useSelector(state=>state.user)
+    const {imgpogup,settingPopUp,loading}=useSelector(state=>state.user)
     const {openPopUpImg}=useSelector((state)=>state.photo)
     const {openCarusle}=useSelector((state)=>state.carusel)
     const {photos}=useSelector((state)=>state.user.user)
+
+    console.log(openCarusle)
     if(imgpogup){
         {
             setTimeout(()=>{
                 
                 dispatch(ClosePopUp())
-            },[7000])
+            },[5000])
         }
     }
-    if(openPopUpImg){
+    if(openPopUpImg ){
         {
             setTimeout(()=>{
                 
                 dispatch(ClosePopUpSuccessSaveimg())
-            },[7000])
+            },[5000])
+        }
+    }
+    if(settingPopUp){
+        {
+            setTimeout(()=>{
+                
+                dispatch(closeSaveNewSettings())
+            },[5000])
         }
     }
     if(loading){
@@ -42,8 +52,7 @@ function Profile(props){
         </div>
     }
     else{
-        return <div className="profil" >
-            
+        return <div  className="profil" className={openCarusle && 'OpenCarusel'} >
             <div>
                 <NavBar></NavBar>
             </div>
@@ -53,6 +62,8 @@ function Profile(props){
             <div className="popup">
                 {imgpogup && <SuccesPopUp text={'Success change Avatar'} />}
                 {openPopUpImg && <SuccesPopUp text={'Success save photo'} />}
+                {settingPopUp && <SuccesPopUp text={'Success change data'} />}
+                
              </div>
 
             {openCarusle &&

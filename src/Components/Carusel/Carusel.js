@@ -54,28 +54,33 @@ function Carusel (props){
     let time=new Date(temp[index].date).toDateString().toString()
     return <div className="carusel">
             <p className="closeCarusle" onClick={()=>dispatch(CloseCaruslePhotos())}>x</p>
-            <button onClick={()=>setindexL(index)}>l</button>
+            <button onClick={()=>setindexL(index)}><i className="fas fa-angle-left "></i></button>
                 <div className="caruselitem">
                     <div className="Caruselitemimg">
                         <img src={temp[index].img}></img>
                     </div>
                     <div className="caruselTextDiv">
                         <div className="caruselText">
+                           <div className="Likecomment">
+                               <div>
+                                    <i className="far fa-heart"></i>
+                               </div>
+                               <div>
+                                    <i className="far fa-comment"></i>
+                               </div>
+                               <div>
+                                    <i className="far fa-bookmark"></i>
+                               </div>
+                           </div>
+                            <p className="caruselTextp">{temp[index].text}</p>
                             <div className="caruselTextData">
                                 <p>{time}</p>
                                 <p> {d.date} {d.type} ago</p>
                             </div>
-                            <p className="caruselTextp">{temp[index].text}</p>
-                            {/* <div className="caruseComment">
-                                <textarea placeholder="Comment..."></textarea>
-                                <div className="commentdiv">
-                                    <button className="commentsend">Send</button>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </div>
-            <button onClick={()=>setindexR(index)}>L</button>
+            <button onClick={()=>setindexR(index)}><i className="fas fa-angle-right button1"></i></button>
     </div>
 } 
 export default Carusel

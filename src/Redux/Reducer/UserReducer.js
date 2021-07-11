@@ -20,6 +20,17 @@ function UserReducer(state=UserState,action){
         let d=Date.now()
         temp.user.photos={...temp.user.photos,d:action.value}
     }
+    if(action.type==='endSaveNewSettings'){
+        temp.user=action.user
+        temp.settingLoadin=false
+        temp.settingPopUp=true 
+    }
+    if(action.type==='startSaveNewSettings'){
+        temp.settingLoadin=true
+    }
+    if(action.type==='SaveNewSettings'){
+        temp.settingPopUp=false
+    }
 
 
     return temp    

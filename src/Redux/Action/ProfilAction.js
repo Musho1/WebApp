@@ -26,14 +26,10 @@ const endGetUserByUid=(user)=>{
         user,
     }
 }
-
-
-
-
 export const SaveAvater=(elm)=>{
     const uid=sessionStorage.getItem('uid')
     return (dispatch)=>{
-        firebase.storage().ref(`images/${uid}`).child(uid).put(elm).then((r)=>{
+        firebase.storage().ref(`images/`).child(uid).put(elm).then((r)=>{
             firebase.storage().ref().child(`images/${uid}`).getDownloadURL().then((url)=>{
                 db.ref(`/users/${uid}/avatar`).set(url).then((r)=>{
                     dispatch(successchangeavatar(url))

@@ -17,7 +17,8 @@ function Photos(){
             dispatch(OpenSelectImg())
         }
     }
-    return <Profile  props={selectImg}>
+
+    return <Profile   props={selectImg}>
         <h1 className="photostitle">Photos</h1>
         <div className="PhotosoSelectDiv">
             <label htmlFor="myfile" className="label">Выберите файлы</label>
@@ -35,7 +36,7 @@ function Photos(){
             }
         </div>
 
-        <div className="PhotosCardDiv">
+        <div onClick={()=>{window.scrollTo(0,0)}} className="PhotosCardDiv">
             {photos.user.photos!==undefined && (photos.user.photos)!==null  && Object.values(photos.user.photos).map((elm,i)=>{
                 return <Card data={elm} number={i} key={i}></Card>
             })}
