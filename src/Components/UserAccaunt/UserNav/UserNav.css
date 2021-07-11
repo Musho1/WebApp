@@ -1,0 +1,13 @@
+.UserNav{
+    margin-top: 200px !important;
+    width: 90%;
+    height: 45px;
+    margin: auto;
+    border: 1px solid #a200ff;
+}
+.UserNav ul li{
+    color: #a200ff;
+}
+.UserNav ul li i{
+    color: #a200ff;
+}
