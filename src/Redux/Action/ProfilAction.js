@@ -15,7 +15,7 @@ export const GetUserByUid=()=>{
         dispatch(startGetuserByUdi())
         db.ref().child("users").child(uid).get().then((r)=>{
         dispatch(endGetUserByUid(r.val()))
-
+        dispatch(Getuserfollowing(r.val()))
         })
     }
 }
@@ -50,5 +50,26 @@ const successchangeavatar=(value)=>{
 export const ClosePopUp=()=>{
     return {
         type:'ClosePopUp'
+    }
+}
+
+
+
+export const Getuserfollowing=(user)=>{
+    return (dispatch)=>{
+        if(user.following)
+        Object.values(user.following).forEach((elm)=>{{
+            db.ref().child("users").child(elm).get().then((r)=>{
+                dispatch(endgetmyfollowing(r.val()))
+            })
+        }})
+    }
+}
+
+
+const endgetmyfollowing=(value)=>{
+    return {
+        type:'endgetmyfollowing',
+        value
     }
 }

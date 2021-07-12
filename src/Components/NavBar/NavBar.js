@@ -1,10 +1,8 @@
-import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './NavBar.css'
 function NavBar(){
     const history=useHistory()
-    const dispatch=useDispatch()
     const LogOut=()=>{
         sessionStorage.removeItem('uid')
         history.push('/')

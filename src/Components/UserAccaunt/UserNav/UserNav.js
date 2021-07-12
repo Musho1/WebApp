@@ -11,7 +11,7 @@ function UserNav(){
                    <Link to={`/user/photo/${useraccauntdata.uid}`}> <i className="far fa-image"></i> Photo</Link>
                 </li>
                 <li>
-                    <Link to={`/user/info/${useraccauntdata.uid}`}><i class="fas fa-info-circle"></i> Info</Link>
+                    <Link to={`/user/info/${useraccauntdata.uid}`}><i className="fas fa-info-circle"></i> Info</Link>
                 </li>
             </ul>
             <ul className="mobileusernav">
@@ -19,7 +19,7 @@ function UserNav(){
                     <Link to={`/user/photo/${useraccauntdata.uid}`}> <i className="far fa-image"></i></Link>
                 </li>
                 <li>
-                    <Link to={`/user/info/${useraccauntdata.uid}`}><i class="fas fa-info-circle"></i></Link>
+                    <Link to={`/user/info/${useraccauntdata.uid}`}><i className="fas fa-info-circle"></i></Link>
                 </li>
             </ul>
         </nav>

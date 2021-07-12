@@ -26,10 +26,28 @@
     width: 100%;
     height: 100%;
 }
-.userNameSurname{
-    margin-top: 135px;
+.userNameSurnameFolwo{
+    margin-top: 110px;
     display: flex;
+    width: 100%;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+.userNameSurnameFolwobutton{
+    margin-top:15px;
+}
+.userNameSurnameFolwobutton button {
+    border: 1px solid #a200ff;
+    width: 90px;
+
+}
+.userNameSurnameFolwobutton button:hover{
+    background-color: #a200ff;
+    color: white;
+}
+.userNameSurname {
+    display: flex;
 }
 .userNameSurname p{
     margin:0 5px ;

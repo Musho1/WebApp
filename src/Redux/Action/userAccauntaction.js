@@ -21,3 +21,17 @@ const StartGetUserAcccauntByUid=()=>{
         type:'StartGetUserAcccauntByUid'
     }
 }
+
+export const following=(otheruid)=>{
+    const myuid=sessionStorage.getItem('uid')
+    return (dispatch)=>{
+
+        db.ref(`/users/${myuid}/following`).push(otheruid).then((r)=>{
+            console.log('ok')
+        })
+        db.ref(`/users/${otheruid}/followers`).push(myuid).then((r)=>{
+            console.log('ok ')
+        })
+    }
+    
+}

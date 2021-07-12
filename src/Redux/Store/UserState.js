@@ -4,5 +4,7 @@ export default{
     SuccessChangeAvatar:'',
     imgpogup:false,
     settingLoadin:false,
-    settingPopUp:false
+    settingPopUp:false,
+    following:[],
+    followingpost:[]
 }

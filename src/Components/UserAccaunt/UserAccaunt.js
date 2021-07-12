@@ -3,7 +3,7 @@ import female from '../../Img/pngaaa.com-313414.png'
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
-import { GetUserAcccauntByUid} from "../../Redux/Action/userAccauntaction"
+import { following, GetUserAcccauntByUid} from "../../Redux/Action/userAccauntaction"
 import "./UserAccaunt.css"
 import UserNav from './UserNav/UserNav'
 import NavBar from "../NavBar/NavBar"
@@ -53,9 +53,18 @@ function UserAccaunt(props){
                     }
                 </div>
             </div>
-            <div className="userNameSurname">
+          
+            <div className="userNameSurnameFolwo">
+                <div className="userNameSurname">
                     <p>{useraccauntdata.name}</p> <p>{useraccauntdata.surname}</p>
+                </div>
+    
+                <div className="userNameSurnameFolwobutton">
+                    <button onClick={()=>dispatch(following(useraccauntdata.uid))}>Follow</button>
+                </div>
+
             </div>
+            
             <div>
                 <UserNav></UserNav>
             </div>

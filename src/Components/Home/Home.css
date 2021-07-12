@@ -1,9 +1,38 @@
+.home{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .texAreahome{
     width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+.followerfollowinghome {
+    margin-bottom: 80px !important;
+    width: 50%;
+    border: 1px solid #a200ff;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.followerfollowinghome div{
+    height: 20px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+.followerfollowinghome div p{
+    margin: 0 30px;
+    display: flex;
     align-items: center;
 }
 .texAreahome textarea{
@@ -25,12 +54,40 @@
     height: 30px;
 
 }
+.followerfollowinghomemobile{
+    display: none;
+}
 @media only screen and (max-width: 600px) {
     .texAreahome textarea{
-        width: 80%;
+        width: 100%;
     }
     .textAreaHomebutton{
-        width: 80%;
+        width: 100%;
     }
-    
+    .followerfollowinghome{
+        display: none;
+    }
+    .followerfollowinghomemobile{
+        display: block;
+        width: 100%;
+        margin-bottom: 80px !important;
+        border: 1px solid #a200ff;
+        height: 40px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .followerfollowinghomemobile div {
+        width: 50px ;
+        height: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .followerfollowinghomemobile  p{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        margin-top: -2px;
+    }
   }

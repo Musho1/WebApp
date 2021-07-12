@@ -31,7 +31,33 @@ function UserReducer(state=UserState,action){
     if(action.type==='SaveNewSettings'){
         temp.settingPopUp=false
     }
-
+    if(action.type==='endgetmyfollowing'){
+        if(temp.following.length!==0)
+        {
+            let k=true
+            temp.following.forEach((elm)=>{
+                if(elm.uid===action.value.uid){
+                    k=false
+                }
+            })
+            if(k){
+                temp.following.push(action.value)
+                if(action.value.photos){
+                    Object.values(action.value.photos).forEach((elm)=>{
+                        temp.followingpost[0].push(elm)
+                    })
+                    
+                }
+            }
+        }
+        else{
+            temp.following.push(action.value)
+            if(action.value.photos)
+            temp.followingpost.push(Object.values(action.value.photos))
+        }
+        
+       
+    }
 
     return temp    
 }
