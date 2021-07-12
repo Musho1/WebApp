@@ -6,6 +6,9 @@ import { useHistory } from "react-router-dom"
 import { GetUserAcccauntByUid} from "../../Redux/Action/userAccauntaction"
 import "./UserAccaunt.css"
 import UserNav from './UserNav/UserNav'
+import NavBar from "../NavBar/NavBar"
+
+
 function UserAccaunt(props){
     const {useraccauntdata,loadingUserAccaunt}=useSelector(state=>state.useraccaunt)
     const history=useHistory()
@@ -21,33 +24,45 @@ function UserAccaunt(props){
             </div>
         </div>
     }
-
-    else
-    return <div className="userAccaunt">
-        <div className="userMaindiv">
-            <div className="userraccaundFon">
-                <img  src="https://img4.goodfon.ru/wallpaper/nbig/1/77/background-texture-wood-doski-derevo-blue-fon-vintage.jpg"></img>
+    else{
+        return <div className="userAccaunt"  className={props.className && 'useropencarusel'} >
+            <div>
+                <NavBar></NavBar>
             </div>
-            <div className="userAvatar">
-                {useraccauntdata.avatar===undefined && useraccauntdata.gender==="male" &&
-                    <img src={male}></img>
-                }
-                {useraccauntdata.avatar===undefined && useraccauntdata.gender==="female" &&
-                    <img src={female}></img>
-                }
-                {
-                    useraccauntdata.avatar!==undefined &&
-                    <img src={useraccauntdata.avatar}></img>
-                }
+            {
+                props.className &&
+                <div className={props.className}>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcPfUZQvzZakE8Tt_518-zNzAL9uKnHFoudYoU7CLYw0Q0_odbAMzqqIX6uA37CNwgm7c&usqp=CAU"></img>
+                </div>
+            }
+            <div className="userMaindiv">
+                <div className="userraccaundFon">
+                    <img  src="https://img4.goodfon.ru/wallpaper/nbig/1/77/background-texture-wood-doski-derevo-blue-fon-vintage.jpg"></img>
+                </div>
+                
+                <div className="userAvatar">
+                    {useraccauntdata.avatar===undefined && useraccauntdata.gender==="male" &&
+                        <img src={male}></img>
+                    }
+                    {useraccauntdata.avatar===undefined && useraccauntdata.gender==="female" &&
+                        <img src={female}></img>
+                    }
+                    {
+                        useraccauntdata.avatar!==undefined &&
+                        <img src={useraccauntdata.avatar}></img>
+                    }
+                </div>
             </div>
-         
+            <div className="userNameSurname">
+                    <p>{useraccauntdata.name}</p> <p>{useraccauntdata.surname}</p>
+            </div>
+            <div>
+                <UserNav></UserNav>
+            </div>
+            <div className="useraccauntpropschildren">
+                {props.children}
+            </div>
         </div>
-        <div>
-            <UserNav></UserNav>
-        </div>
-        <div className="useraccauntpropschildren">
-            {props.children}
-        </div>
-    </div>
+    }
 }
 export default UserAccaunt

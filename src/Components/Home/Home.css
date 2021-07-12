@@ -1,0 +1,36 @@
+.texAreahome{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.texAreahome textarea{
+    width: 50%;
+    resize: none;
+    border: 1px solid #a200ff;
+    box-shadow: 0 8px 16px 0 rgba(32, 32, 32, 0.3);
+    outline: none;
+}
+.textAreaHomebutton{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+.textAreaHomebutton button{
+    margin-top: 15px;
+    border: 1px solid #a200ff;
+    width: 80px;
+    height: 30px;
+
+}
+@media only screen and (max-width: 600px) {
+    .texAreahome textarea{
+        width: 80%;
+    }
+    .textAreaHomebutton{
+        width: 80%;
+    }
+    
+  }

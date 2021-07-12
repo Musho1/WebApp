@@ -16,7 +16,11 @@ function NavBar(){
 
         <nav className="NavBar">
             <ul>
-                <li> <i className="fas fa-home"></i> Home</li>
+                <li> 
+                    <Link className="link" to="/profile">
+                        <i className="fas fa-home"></i> Home
+                    </Link>
+                </li>
                 <li>
                     <Link className="link" to='/photos'>
                         <i className="far fa-image"></i> Photos
@@ -41,7 +45,7 @@ function NavBar(){
 
             <ul className="navMobile">
                 <li>
-                    <Link to=""><i className="fas fa-home"></i></Link>
+                    <Link to="/profile"><i className="fas fa-home"></i></Link>
                 </li>
                 <li>
                     <Link to="/photos"><i className="far fa-image"></i></Link>

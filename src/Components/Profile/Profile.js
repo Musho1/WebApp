@@ -19,7 +19,6 @@ function Profile(props){
     const {openCarusle}=useSelector((state)=>state.carusel)
     const {photos}=useSelector((state)=>state.user.user)
 
-    console.log(openCarusle)
     if(imgpogup){
         {
             setTimeout(()=>{
@@ -52,7 +51,7 @@ function Profile(props){
         </div>
     }
     else{
-        return <div  className="profil" className={openCarusle && 'OpenCarusel'} >
+        return <div   className="profil" className={openCarusle && 'OpenCarusel'} >
             <div>
                 <NavBar></NavBar>
             </div>
@@ -72,9 +71,9 @@ function Profile(props){
              </div>
             }
 
-            <div className="profilitem">
-                <MyProfil></MyProfil> 
-                <div className="propschildren">
+            <div className={props.classname?'Home': 'profilitem'}>
+                <MyProfil className={props.classname &&'HomeMyProfile'}></MyProfil> 
+                <div className={props.classname?'propschildrenhome':'propschildren'}>
                     {props.children}
                 </div>
             </div>

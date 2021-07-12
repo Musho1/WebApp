@@ -1,0 +1,11 @@
+.userinfotitle{
+    display: flex;
+    justify-content: center;
+    color: #a200ff;
+}
+.userInfo{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}

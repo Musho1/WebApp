@@ -1,11 +1,15 @@
-body{
-    overflow:visible !important;
-}
 .userPhotoTitle h1{
     color: #a200ff;
     text-align: center;
-    margin: 30px;
 }
 .PhotosCardDiv{
     margin: 15px;
+}
+.UserPhotoNoPhoto {
+    margin: auto;
+}
+.UserPhotosCardDiv{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
