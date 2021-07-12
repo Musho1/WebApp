@@ -16,7 +16,7 @@
 }
 .followerfollowinghome {
     margin-bottom: 80px !important;
-    width: 50%;
+    width: 600px;
     border: 1px solid #a200ff;
     height: 40px;
     margin: auto;
@@ -26,7 +26,6 @@
 }
 .followerfollowinghome div{
     height: 20px;
-    width: 200px;
     display: flex;
     justify-content: space-between;
 }
@@ -36,7 +35,7 @@
     align-items: center;
 }
 .texAreahome textarea{
-    width: 50%;
+    width: 600px;
     resize: none;
     border: 1px solid #a200ff;
     box-shadow: 0 8px 16px 0 rgba(32, 32, 32, 0.3);
@@ -44,7 +43,7 @@
 }
 .textAreaHomebutton{
     display: flex;
-    width: 50%;
+    width: 600px;
     justify-content: flex-end;
 }
 .textAreaHomebutton button{

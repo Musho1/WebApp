@@ -42,6 +42,9 @@
     width: 90px;
 
 }
+.UnFollow:hover{
+    background-color: red !important;
+}
 .userNameSurnameFolwobutton button:hover{
     background-color: #a200ff;
     color: white;

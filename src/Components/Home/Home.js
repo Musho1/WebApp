@@ -1,11 +1,10 @@
-import { useState } from "react"
 import { useSelector } from "react-redux"
 import Profile from "../Profile/Profile"
 import SubscribeCard from "../Subscribe/SubscribeCard"
 import './Home.css'
 function Home(){
     const {following,followingpost}=useSelector((state)=>state.user)
-    const [user,setuser]=useState([])
+    console.log(following)
     return <Profile classname="Home">
         <div className="home">
             <div className="followerfollowinghome">

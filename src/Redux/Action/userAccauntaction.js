@@ -26,12 +26,23 @@ export const following=(otheruid)=>{
     const myuid=sessionStorage.getItem('uid')
     return (dispatch)=>{
 
-        db.ref(`/users/${myuid}/following`).push(otheruid).then((r)=>{
+        db.ref(`/users/${myuid}/following/${otheruid}`).set(otheruid).then((r)=>{
             console.log('ok')
         })
-        db.ref(`/users/${otheruid}/followers`).push(myuid).then((r)=>{
+        db.ref(`/users/${otheruid}/followers/${myuid}`).set(myuid).then((r)=>{
             console.log('ok ')
         })
     }
     
+}
+
+
+
+export const unfollowing=(otheruid)=>{
+    const myuid=sessionStorage.getItem('uid')
+    return (dispatch)=>{
+        db.ref(`/users/${myuid}/following/`).child(otheruid).remove().then((r)=>{
+            console.log('removed')
+        })
+    }       
 }

@@ -16,7 +16,7 @@ function SubscribeCard(props){
     return <div className="subscribe">
         <div className="subscribedata">
             <div className="subscribeuserdata">
-                {!user.avatar && user.gender==='male'  &&
+                {!user.avatar && user.gender==='male' &&
                 <img src={male}></img>
 
                 }

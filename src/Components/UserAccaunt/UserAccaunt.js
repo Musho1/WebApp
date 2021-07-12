@@ -3,7 +3,7 @@ import female from '../../Img/pngaaa.com-313414.png'
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
-import { following, GetUserAcccauntByUid} from "../../Redux/Action/userAccauntaction"
+import { following, GetUserAcccauntByUid, unfollowing} from "../../Redux/Action/userAccauntaction"
 import "./UserAccaunt.css"
 import UserNav from './UserNav/UserNav'
 import NavBar from "../NavBar/NavBar"
@@ -11,8 +11,18 @@ import NavBar from "../NavBar/NavBar"
 
 function UserAccaunt(props){
     const {useraccauntdata,loadingUserAccaunt}=useSelector(state=>state.useraccaunt)
+    const Following=useSelector((state)=>state.user)
+    console.log(Following.following)
+    let isfollowing=false
     const history=useHistory()
     const [uid,setuid]=useState(history.location.pathname.slice(history.location.pathname.lastIndexOf('/')+1,history.location.pathname.length))
+    if(useraccauntdata.followers!==undefined){
+        Object.values(useraccauntdata.followers).forEach((elm)=>{
+            if(elm===sessionStorage.getItem('uid')){
+                isfollowing=true
+            }
+        })
+    }
     const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(GetUserAcccauntByUid(uid))
@@ -60,7 +70,9 @@ function UserAccaunt(props){
                 </div>
     
                 <div className="userNameSurnameFolwobutton">
-                    <button onClick={()=>dispatch(following(useraccauntdata.uid))}>Follow</button>
+                    {!isfollowing?<button onClick={()=>dispatch(following(useraccauntdata.uid))}>Follow</button>:
+                        <button className="UnFollow" onClick={()=>dispatch(unfollowing(useraccauntdata.uid))}>UnFollow</button>
+                    }
                 </div>
 
             </div>

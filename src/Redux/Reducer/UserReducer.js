@@ -42,9 +42,14 @@ function UserReducer(state=UserState,action){
             })
             if(k){
                 temp.following.push(action.value)
-                if(action.value.photos){
+                if(action.value.photos!==undefined){
                     Object.values(action.value.photos).forEach((elm)=>{
-                        temp.followingpost[0].push(elm)
+                        if(temp.followingpost[0]!==undefined){
+                            temp.followingpost[0].push(elm)
+                        }
+                        else{
+                            temp.following.push(action.value)
+                        }
                     })
                     
                 }
