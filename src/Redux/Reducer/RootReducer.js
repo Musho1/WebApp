@@ -6,6 +6,7 @@ import SearchReducer from './SearchReducer'
 import SelectImgReducer from './SelectImgReducer'
 import SignUpReducer from './SignUpReducer'
 import UserReducer from './UserReducer'
+import followersReducer from './followersReducer'
 
 export default combineReducers({
     singup:SignUpReducer,
@@ -15,4 +16,5 @@ export default combineReducers({
     carusel:CaruselReducer,
     search:SearchReducer,
     useraccaunt:UserAccauntReducer,
+    followopen:followersReducer,
 })

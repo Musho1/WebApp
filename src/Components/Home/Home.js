@@ -1,9 +1,13 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { openfollowerscomponent } from "../../Redux/Action/followersAction"
+import Followers from "../followers/followers"
 import Profile from "../Profile/Profile"
 import SubscribeCard from "../Subscribe/SubscribeCard"
 import './Home.css'
 function Home(){
     const {following,followingpost}=useSelector((state)=>state.user)
+    const {openfollowers}=useSelector((state)=>state.followopen)
+    const dispatch=useDispatch()
     return <Profile classname="Home">
         <div className="home">
             <div className="followerfollowinghome">
@@ -11,7 +15,7 @@ function Home(){
                     <i className="fas fa-images"></i>
                     <p className="followerfollowinghomep"> Post</p>
                 </div>
-                <div>
+                <div onClick={()=>dispatch(openfollowerscomponent())}>
                     <i className="fas fa-user"></i>
 
                         <p>{following?following.length:0} followers</p> 
@@ -41,6 +45,11 @@ function Home(){
                         <p>0</p> 
                     </div>
             </div>
+            {openfollowers &&
+                <div>
+                    <Followers></Followers>
+                </div>
+            }
             <div className="texAreahome">
                 <textarea placeholder="text..."></textarea>
                 <div className="textAreaHomebutton">

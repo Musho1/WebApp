@@ -10,7 +10,6 @@ export const SearchPeopel=(text)=>{
         })
     }
 }
-
 const endSearchuser=(value)=>{
         return {
         type:'endSearchuser',
