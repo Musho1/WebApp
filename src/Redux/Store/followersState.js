@@ -1,3 +1,4 @@
 export default {
-    openfollowers:false
+    openfollowers:false,
+    title:''
 }

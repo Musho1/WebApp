@@ -6,5 +6,6 @@ export default{
     settingLoadin:false,
     settingPopUp:false,
     following:[],
-    followingpost:[]
+    followingpost:[],
+    followers:[]
 }

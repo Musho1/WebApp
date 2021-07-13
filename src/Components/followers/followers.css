@@ -35,9 +35,11 @@
 .closebuttonfolowers{
     justify-content: flex-end;
     display: flex;
-    margin: 0 10px;
-   
-    
+    margin: 0 10px;  
+}
+.Followers h1{
+    text-align: center;
+    color: #a200ff;
 }
 .closebuttonfolowers p{
     width: 30px;
@@ -48,3 +50,11 @@
     background-color: red;
     color: white;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .Followers{
+        bottom: -380px;
+    }
+  }
+  

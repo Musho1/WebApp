@@ -5,8 +5,8 @@ import Profile from "../Profile/Profile"
 import SubscribeCard from "../Subscribe/SubscribeCard"
 import './Home.css'
 function Home(){
-    const {following,followingpost}=useSelector((state)=>state.user)
-    const {openfollowers}=useSelector((state)=>state.followopen)
+    const {following,followingpost,followers}=useSelector((state)=>state.user)
+    const {openfollowers,title}=useSelector((state)=>state.followopen)
     const dispatch=useDispatch()
     return <Profile classname="Home">
         <div className="home">
@@ -22,9 +22,9 @@ function Home(){
                        
                 </div>
                 <div>
-                    <i className="fas fa-users"></i>
+                    <i className="fas fa-users" onClick={()=>dispatch(openfollowerscomponent('Following'))}></i>
                     {
-                        <p>0 following</p> 
+                        <p>{followers.length} following</p> 
                     }
                 </div>
             </div>
@@ -34,20 +34,20 @@ function Home(){
                     </div>
                     <div>
                         <div>
-                            <i className="fas fa-user"></i>
+                            <i className="fas fa-user"  onClick={()=>dispatch(openfollowerscomponent('Followers'))}></i>
                         </div>
                         <p>{following?following.length:0}</p>
                     </div>
                     <div>
                         <div>
-                            <i className="fas fa-users"></i>
+                            <i className="fas fa-users" onClick={()=>dispatch(openfollowerscomponent('Following'))}></i>
                         </div>    
-                        <p>0</p> 
+                        <p>{followers.length}</p> 
                     </div>
             </div>
             {openfollowers &&
                 <div>
-                    <Followers></Followers>
+                    <Followers title={title}></Followers>
                 </div>
             }
             <div className="texAreahome">

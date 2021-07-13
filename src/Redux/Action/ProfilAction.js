@@ -16,6 +16,7 @@ export const GetUserByUid=()=>{
         db.ref().child("users").child(uid).get().then((r)=>{
         dispatch(endGetUserByUid(r.val()))
         dispatch(Getuserfollowing(r.val()))
+        dispatch(Getuserfollowers(r.val()))
         })
     }
 }
@@ -66,10 +67,29 @@ export const Getuserfollowing=(user)=>{
     }
 }
 
+//
+export const Getuserfollowers=(user)=>{
+    return (dispatch)=>{
+        if(user.followers)
+        Object.values(user.followers).forEach((elm)=>{{
+            db.ref().child("users").child(elm).get().then((r)=>{
+                dispatch(endgetmyfollowers(r.val()))
+            })
+        }})
+    }
+} 
 
 const endgetmyfollowing=(value)=>{
     return {
         type:'endgetmyfollowing',
         value
+    }
+}
+
+
+const endgetmyfollowers=(value)=>{
+    return {
+        type:'endgetmyfollowers',
+        value,
     }
 }

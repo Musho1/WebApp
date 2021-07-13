@@ -40,8 +40,7 @@ function UserReducer(state=UserState,action){
             })
             if(k){
                 temp.following.push(action.value)
-                if(action.value!==null && action.value.photos.length!==0)
-                if(action.value!==null &&action.value.photos.length!==0){
+                if(action.value!==null &&action.value.photos!==undefined){
                     Object.values(action.value.photos).forEach((elm)=>{
                         if(temp.followingpost!==undefined){
                             temp.followingpost.push(elm)
@@ -52,7 +51,20 @@ function UserReducer(state=UserState,action){
                 }
             }
         }
-     
+     if(action.type==='endgetmyfollowers'){
+         let k=true
+         temp.followers.forEach((elm)=>{
+            if(elm.uid===action.value.uid){
+                k=false
+            }
+        })
+        if(k){
+            temp.followers.push(action.value)
+        }
+     }
+
+
+
     if(action.type==='removeuserbyid'){
         temp.following.forEach((elm,i)=>{
             if(elm.uid===action.uid){
