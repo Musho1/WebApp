@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { ClosePopUpSuccessSaveimg } from "../../Redux/Action/PhotoAction"
-import { ClosePopUp, GetUserByUid } from "../../Redux/Action/ProfilAction"
+import { closebackgraundpopup, ClosePopUp, GetUserByUid } from "../../Redux/Action/ProfilAction"
 import NavBar from "../NavBar/NavBar"
 import SuccesPopUp from "../PopUp/SuccesPopUp"
 import MyProfil from "./MyProfil/MyProfil"
@@ -18,6 +18,7 @@ function Profile(props){
     const {openPopUpImg}=useSelector((state)=>state.photo)
     const {openCarusle}=useSelector((state)=>state.carusel)
     const {photos}=useSelector((state)=>state.user.user)
+    const {backgraundPopUp}=useSelector((state)=>state.user)
 
     if(imgpogup){
         {
@@ -43,6 +44,12 @@ function Profile(props){
             },[5000])
         }
     }
+    if(backgraundPopUp){
+            setTimeout(()=>{
+                dispatch(closebackgraundpopup())
+            },[5000])
+        
+    }
     if(loading){
         return <div className="divSpiner">
             <div className="SpinerDiv">
@@ -62,6 +69,7 @@ function Profile(props){
                 {imgpogup && <SuccesPopUp text={'Success change Avatar'} />}
                 {openPopUpImg && <SuccesPopUp text={'Success save photo'} />}
                 {settingPopUp && <SuccesPopUp text={'Success change data'} />}
+                {backgraundPopUp && <SuccesPopUp text={'Success change backgraund'} />}
                 
              </div>
 

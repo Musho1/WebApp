@@ -6,7 +6,6 @@ function Followers(props){
     const dispatch=useDispatch()
 
     const {following,followers}=useSelector((state)=>state.user)
-  
     return <div className="Followers">
         <div className="closebuttonfolowers" onClick={()=>dispatch(closefollowerscomponent())}><p>x</p></div>
         <h1>{props.title}</h1>

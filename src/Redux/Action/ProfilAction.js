@@ -32,6 +32,7 @@ export const SaveAvater=(elm)=>{
     return (dispatch)=>{
         firebase.storage().ref(`images/`).child(uid).put(elm).then((r)=>{
             firebase.storage().ref().child(`images/${uid}`).getDownloadURL().then((url)=>{
+
                 db.ref(`/users/${uid}/avatar`).set(url).then((r)=>{
                     dispatch(successchangeavatar(url))
                 })
@@ -39,6 +40,32 @@ export const SaveAvater=(elm)=>{
         })
     }
 }
+
+export const savebackgraundfon=(elm)=>{
+    return (dispatch=>{
+        const uid=sessionStorage.getItem('uid')
+        firebase.storage().ref(`backgraund/`).child(uid).put(elm).then((r)=>{
+            firebase.storage().ref().child(`backgraund/${uid}`).getDownloadURL().then((url)=>{
+                db.ref(`/users/${uid}/backgraund`).set(url).then((r)=>{
+                    console.log('ok')
+                    dispatch(successchangeavatarBackgraund(url))
+                })
+            })
+        })
+    })
+}
+export const closebackgraundpopup=()=>{
+    return{
+        type:'closebackgraundpopup'
+    }
+}
+const successchangeavatarBackgraund=(value)=>{
+    return {
+        type:'successchangeavatarBackgraund',
+        value,
+    }
+}
+
 const successchangeavatar=(value)=>{
     return {
         type:'successchangeavatar',
@@ -85,6 +112,8 @@ const endgetmyfollowing=(value)=>{
         value
     }
 }
+
+
 
 
 const endgetmyfollowers=(value)=>{

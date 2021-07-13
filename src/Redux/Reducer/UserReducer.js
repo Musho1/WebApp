@@ -13,6 +13,13 @@ function UserReducer(state=UserState,action){
         temp.SuccessChangeAvatar=action.value
         temp.imgpogup=true
     }
+    if(action.type==='successchangeavatarBackgraund'){
+        temp.SucceschageBackgraund=action.value
+        temp.backgraundPopUp=true
+    }
+    if(action.type==='closebackgraundpopup'){
+        temp.backgraundPopUp=false
+    }
     if(action.type==='ClosePopUp'){
         temp.imgpogup=false
     }

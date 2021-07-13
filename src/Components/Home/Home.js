@@ -15,7 +15,7 @@ function Home(){
                     <i className="fas fa-images"></i>
                     <p className="followerfollowinghomep"> Post</p>
                 </div>
-                <div onClick={()=>dispatch(openfollowerscomponent())}>
+                <div onClick={()=>dispatch(openfollowerscomponent('Followers'))}>
                     <i className="fas fa-user"></i>
 
                         <p>{following?following.length:0} followers</p> 

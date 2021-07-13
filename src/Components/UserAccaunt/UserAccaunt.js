@@ -15,6 +15,7 @@ function UserAccaunt(props){
     const history=useHistory()
     const [uid,setuid]=useState(history.location.pathname.slice(history.location.pathname.lastIndexOf('/')+1,history.location.pathname.length))
     const dispatch=useDispatch()
+    console.log(useraccauntdata)
     useEffect(()=>{
         dispatch(GetUserAcccauntByUid(uid))
     },[user])
@@ -32,14 +33,19 @@ function UserAccaunt(props){
                 <NavBar></NavBar>
             </div>
             {
-                props.className &&
+                props.className  &&
                 <div className={props.className}>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcPfUZQvzZakE8Tt_518-zNzAL9uKnHFoudYoU7CLYw0Q0_odbAMzqqIX6uA37CNwgm7c&usqp=CAU"></img>
                 </div>
+              
             }
             <div className="userMaindiv">
                 <div className="userraccaundFon">
-                    <img  src="https://img4.goodfon.ru/wallpaper/nbig/1/77/background-texture-wood-doski-derevo-blue-fon-vintage.jpg"></img>
+                    {
+                        useraccauntdata.backgraund===undefined ?
+                        <img  src="https://img4.goodfon.ru/wallpaper/nbig/1/77/background-texture-wood-doski-derevo-blue-fon-vintage.jpg"></img>:
+                        <img src={useraccauntdata.backgraund}></img>
+                    }
                 </div>
                 
                 <div className="userAvatar">
