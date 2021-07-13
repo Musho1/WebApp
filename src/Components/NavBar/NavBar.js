@@ -6,12 +6,9 @@ function NavBar(){
     const LogOut=()=>{
         sessionStorage.removeItem('uid')
         history.push('/')
-
+        window.location.reload(false);
     }
-
     return <div className="NavBar">
-        
-
         <nav className="NavBar">
             <ul>
                 <li> 

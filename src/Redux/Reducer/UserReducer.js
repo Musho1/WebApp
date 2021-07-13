@@ -32,8 +32,6 @@ function UserReducer(state=UserState,action){
         temp.settingPopUp=false
     }
     if(action.type==='endgetmyfollowing'){
-        if(temp.following.length!==0)
-        {
             let k=true
             temp.following.forEach((elm)=>{
                 if(elm.uid===action.value.uid){
@@ -42,26 +40,28 @@ function UserReducer(state=UserState,action){
             })
             if(k){
                 temp.following.push(action.value)
-                if(action.value.photos!==undefined){
+                if(action.value!==null && action.value.photos.length!==0)
+                if(action.value!==null &&action.value.photos.length!==0){
                     Object.values(action.value.photos).forEach((elm)=>{
-                        if(temp.followingpost[0]!==undefined){
-                            temp.followingpost[0].push(elm)
+                        if(temp.followingpost!==undefined){
+                            temp.followingpost.push(elm)
                         }
-                        else{
-                            temp.following.push(action.value)
-                        }
+                        
                     })
                     
                 }
             }
         }
-        else{
-            temp.following.push(action.value)
-            if(action.value.photos)
-            temp.followingpost.push(Object.values(action.value.photos))
-        }
-        
-       
+     
+    if(action.type==='removeuserbyid'){
+        temp.following.forEach((elm,i)=>{
+            if(elm.uid===action.uid){
+                temp.following.splice(i,1)
+            }
+        })
+        // temp.followingpost.forEach((elm,i)=>{
+        //     if(elm)
+        // })
     }
 
     return temp    

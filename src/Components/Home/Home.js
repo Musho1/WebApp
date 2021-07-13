@@ -4,7 +4,6 @@ import SubscribeCard from "../Subscribe/SubscribeCard"
 import './Home.css'
 function Home(){
     const {following,followingpost}=useSelector((state)=>state.user)
-    console.log(following)
     return <Profile classname="Home">
         <div className="home">
             <div className="followerfollowinghome">
@@ -49,8 +48,8 @@ function Home(){
                 </div>
             </div>
             <div>
-                { followingpost[0]!== undefined &&
-                    followingpost[0].sort((a,b)=>b.date-a.date).map((elm,i)=>{
+                { followingpost!== undefined &&
+                    followingpost.sort((a,b)=>b.date-a.date).map((elm,i)=>{
                     return <SubscribeCard key={i} data={elm} user={following} ></SubscribeCard>
                     })
                 }

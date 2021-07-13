@@ -10,23 +10,15 @@ import NavBar from "../NavBar/NavBar"
 
 
 function UserAccaunt(props){
-    const {useraccauntdata,loadingUserAccaunt}=useSelector(state=>state.useraccaunt)
-    const Following=useSelector((state)=>state.user)
-    console.log(Following.following)
-    let isfollowing=false
+    const {useraccauntdata,loadingUserAccaunt,friend}=useSelector(state=>state.useraccaunt)
+    const {user}=useSelector((state)=>state.user)
     const history=useHistory()
     const [uid,setuid]=useState(history.location.pathname.slice(history.location.pathname.lastIndexOf('/')+1,history.location.pathname.length))
-    if(useraccauntdata.followers!==undefined){
-        Object.values(useraccauntdata.followers).forEach((elm)=>{
-            if(elm===sessionStorage.getItem('uid')){
-                isfollowing=true
-            }
-        })
-    }
     const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(GetUserAcccauntByUid(uid))
-    },[])
+    },[user])
+    const [ISfollowing,setISfollowing]=useState(friend)
     if(loadingUserAccaunt){
         return <div className="divSpiner">
             <div className="SpinerDiv">
@@ -70,8 +62,21 @@ function UserAccaunt(props){
                 </div>
     
                 <div className="userNameSurnameFolwobutton">
-                    {!isfollowing?<button onClick={()=>dispatch(following(useraccauntdata.uid))}>Follow</button>:
-                        <button className="UnFollow" onClick={()=>dispatch(unfollowing(useraccauntdata.uid))}>UnFollow</button>
+                    
+                    {   ISfollowing===null?
+
+                    
+                     friend?<button onClick={()=>{setISfollowing(false)
+                                                    dispatch(unfollowing(useraccauntdata.uid))
+                    }}>Unfollow</button>:<button onClick={()=>{setISfollowing(true)
+                                                                dispatch(following(useraccauntdata.uid))}
+                    }>follow</button>
+                    :ISfollowing?<button onClick={()=>{setISfollowing(false)
+                                                    dispatch(unfollowing(useraccauntdata.uid))
+                    }}>Unfollow</button>:<button onClick={()=>{setISfollowing(true)
+                                                                dispatch(following(useraccauntdata.uid))}
+                    }>follow</button>
+
                     }
                 </div>
 
