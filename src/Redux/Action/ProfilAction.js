@@ -47,7 +47,6 @@ export const savebackgraundfon=(elm)=>{
         firebase.storage().ref(`backgraund/`).child(uid).put(elm).then((r)=>{
             firebase.storage().ref().child(`backgraund/${uid}`).getDownloadURL().then((url)=>{
                 db.ref(`/users/${uid}/backgraund`).set(url).then((r)=>{
-                    console.log('ok')
                     dispatch(successchangeavatarBackgraund(url))
                 })
             })
@@ -120,5 +119,17 @@ const endgetmyfollowers=(value)=>{
     return {
         type:'endgetmyfollowers',
         value,
+    }
+}
+
+
+
+export const post=(status)=>{
+    const d=Date.now();
+    const uid=sessionStorage.getItem('uid')
+    return (dispatch)=>{
+        db.ref(`/users/${uid}/status/`).push({text:status,date:d,uid:uid}).then((r)=>{
+            console.log('ok')
+        })
     }
 }

@@ -42,7 +42,7 @@ function MyProfil(props){
                                                                 setChangebackgraundfon(e.target.files[0])
                             }                                        
                             }></input>
-                            <label htmlFor="back"><i class="fas fa-camera"></i></label>
+                            <label htmlFor="back"><i className="fas fa-camera"></i></label>
                         </div>
                         {openbackgraundsavebutton &&
                             <div className="openbackgraundsavebutton">

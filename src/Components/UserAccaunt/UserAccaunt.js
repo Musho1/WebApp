@@ -15,7 +15,6 @@ function UserAccaunt(props){
     const history=useHistory()
     const [uid,setuid]=useState(history.location.pathname.slice(history.location.pathname.lastIndexOf('/')+1,history.location.pathname.length))
     const dispatch=useDispatch()
-    console.log(useraccauntdata)
     useEffect(()=>{
         dispatch(GetUserAcccauntByUid(uid))
     },[user])

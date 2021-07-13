@@ -13,7 +13,7 @@ export const SingUpUser=(user,history)=>{
         dispatch(startSingUpUser())
         firebase.auth().createUserWithEmailAndPassword(user.mail,user.password).then((r)=>{
             dispatch(endSingUpUser())
-            db.ref(`/users/${r.user.uid}`).set({...user,uid:r.user.uid})
+            db.ref(`/users/${r.user.uid}`).set({...user,uid:r.user.uid,searchname:user.name.toUpperCase()})
             history.push('/')
         })
         .catch((error)=>{

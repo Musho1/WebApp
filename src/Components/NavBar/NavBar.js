@@ -48,6 +48,13 @@ function NavBar(){
                 <li>
                     <Link to="settings"><i className="fas fa-cogs"></i></Link>
                 </li>
+                <li>
+                    <Link className="link" to="search">
+                        <i className="fas fa-search"></i>
+                    </Link>
+                </li>
+                <li className='logOut' onClick={()=>LogOut()}><i className="fas fa-sign-out-alt"></i> </li>
+
                 {/* <li>
                     <Link><i class="far fa-comment"></i></Link>
                 </li> */}

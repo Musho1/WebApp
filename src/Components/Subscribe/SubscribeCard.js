@@ -11,30 +11,47 @@ function SubscribeCard(props){
                 }
             })
         }
+        if(props.data.img===undefined && elm.status!==undefined){
+            Object.values(elm.status).forEach((elm2)=>{
+                if(elm2.uid===props.data.uid){
+                    user=elm
+                }
+            })
+        }
+        
         
     })
-    return <div className="subscribe">
+    return <div className={props.data.img ? 'subscribe':'subscribestatus'}>
         <div className="subscribedata">
             <div className="subscribeuserdata">
                 {!user.avatar && user.gender==='male' &&
-                <img src={male}></img>
-
+                    <img src={male}></img>
                 }
                 {!user.avatar && user.gender==='female' &&
                     <img src={female}></img>
                 }
                 {user.avatar && 
-                     <img src={user.avatar}></img>
-                }   
-                <p>{user.name}</p><p>{user.surname}</p>
+                    <img src={user.avatar}></img>
+                } 
+                <div className="subscribeuserdatanamesuernam">
+                    <p>{user.name}</p><p>{user.surname}</p>
+                </div>  
             </div>
-            <div>
+            <div className="subscribeuserdate">
                 <p>{new Date(props.data.date).toDateString().toString()}</p>
             </div>
         </div>
-        <div className="subscribepost">
-            <img src={props.data.img}></img>
-        </div>
+        {props.data.img &&
+            <div className="subscribepost">
+                <img src={props.data.img}></img>
+            </div>
+        }
+        {!props.data.img &&
+        <div className="subscribepoststatus">
+             <p>{props.data.text}</p>
+         </div>
+        }
+       
         <div className="subscribelike">
             <div><i className="far fa-heart"></i></div>
             <div><i className="far fa-comment"></i></div>

@@ -40,14 +40,16 @@ function UserReducer(state=UserState,action){
     }
     if(action.type==='endgetmyfollowing'){
             let k=true
+           
             temp.following.forEach((elm)=>{
-                if(elm.uid===action.value.uid){
+
+                if(action.value && elm.uid===action.value.uid){
                     k=false
                 }
             })
             if(k){
                 temp.following.push(action.value)
-                if(action.value!==null &&action.value.photos!==undefined){
+                if(action.value!==null && action.value.photos!==undefined){
                     Object.values(action.value.photos).forEach((elm)=>{
                         if(temp.followingpost!==undefined){
                             temp.followingpost.push(elm)
@@ -55,6 +57,14 @@ function UserReducer(state=UserState,action){
                         
                     })
                     
+                }
+                if(action.value!==null && action.value.status!==undefined){
+                    Object.values(action.value.status).forEach((elm)=>{
+                        if(temp.followingpost!==undefined){
+                            temp.followingpost.push(elm)
+                        }
+                        
+                    })
                 }
             }
         }

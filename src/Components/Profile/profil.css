@@ -98,7 +98,7 @@ lds-ellipsis {
   display: flex;
 }
 .propschildren{
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 15px; 
   height: 91vh;

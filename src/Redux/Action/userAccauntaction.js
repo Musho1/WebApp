@@ -36,7 +36,6 @@ export const following=(otheruid)=>{
             
         })
         db.ref(`/users/${otheruid}/followers/${myuid}`).set(myuid).then((r)=>{
-            console.log('ok ')
             dispatch(isfollowing())
         })
     }

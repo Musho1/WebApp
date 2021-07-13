@@ -51,6 +51,8 @@
     border: 1px solid #a200ff;
     width: 80px;
     height: 30px;
+    background-color: white;
+    outline: none;
 
 }
 .followerfollowinghomemobile{
