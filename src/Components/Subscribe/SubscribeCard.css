@@ -27,6 +27,7 @@
 }
 .subscribepoststatus{
     padding:20px;
+
 }
 .subscribepost{
     width: 100%;
@@ -85,8 +86,12 @@
     .subscribepost img{
         object-fit: cover;
     }
-    .subscribepoststatus{
+    .subscribepoststatus p{
         padding: 0;
+        display: flex;
+        align-items: center;
+        margin: auto 5px;
+        height: 100%;
     }
     .subscribeuserdate{
         font-size: 10px;

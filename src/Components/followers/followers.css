@@ -1,7 +1,7 @@
 .Followers{
     position: absolute;
     left: 0;
-    bottom: -165px;
+    bottom: -60px;
     background-color: white;
     right: 0;
     margin: auto;
@@ -54,7 +54,11 @@
 
 @media only screen and (max-width: 600px) {
     .Followers{
-        bottom: -380px;
+        bottom: -550px;
+        width: 100%;
+    }
+    .FoloewersCard{
+        width: 100%;
     }
   }
   
