@@ -79,7 +79,21 @@
     width: 100%;
     height: 300px !important;
     }
+    .subscribestatus{
+        width: 100%;
+    }
     .subscribepost img{
         object-fit: cover;
+    }
+    .subscribepoststatus{
+        padding: 0;
+    }
+    .subscribeuserdate{
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+    .subscribeuserdatanamesuernam{
+        font-size: 10px;
+        margin-left: 20px;
     }
   }
