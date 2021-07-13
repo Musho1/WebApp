@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { ClosePopUpSuccessSaveimg } from "../../Redux/Action/PhotoAction"
-import { ClosePopUp, GetUserByUid } from "../../Redux/Action/ProfilAction"
+import { closebackgraundpopup, ClosePopUp, GetUserByUid } from "../../Redux/Action/ProfilAction"
 import NavBar from "../NavBar/NavBar"
 import SuccesPopUp from "../PopUp/SuccesPopUp"
 import MyProfil from "./MyProfil/MyProfil"
@@ -18,8 +18,8 @@ function Profile(props){
     const {openPopUpImg}=useSelector((state)=>state.photo)
     const {openCarusle}=useSelector((state)=>state.carusel)
     const {photos}=useSelector((state)=>state.user.user)
+    const {backgraundPopUp}=useSelector((state)=>state.user)
 
-    console.log(openCarusle)
     if(imgpogup){
         {
             setTimeout(()=>{
@@ -44,6 +44,12 @@ function Profile(props){
             },[5000])
         }
     }
+    if(backgraundPopUp){
+            setTimeout(()=>{
+                dispatch(closebackgraundpopup())
+            },[5000])
+        
+    }
     if(loading){
         return <div className="divSpiner">
             <div className="SpinerDiv">
@@ -52,7 +58,7 @@ function Profile(props){
         </div>
     }
     else{
-        return <div  className="profil" className={openCarusle && 'OpenCarusel'} >
+        return <div   className="profil" className={openCarusle && 'OpenCarusel'} >
             <div>
                 <NavBar></NavBar>
             </div>
@@ -63,6 +69,7 @@ function Profile(props){
                 {imgpogup && <SuccesPopUp text={'Success change Avatar'} />}
                 {openPopUpImg && <SuccesPopUp text={'Success save photo'} />}
                 {settingPopUp && <SuccesPopUp text={'Success change data'} />}
+                {backgraundPopUp && <SuccesPopUp text={'Success change backgraund'} />}
                 
              </div>
 
@@ -72,9 +79,9 @@ function Profile(props){
              </div>
             }
 
-            <div className="profilitem">
-                <MyProfil></MyProfil> 
-                <div className="propschildren">
+            <div className={props.classname?'Home': 'profilitem'}>
+                <MyProfil className={props.classname &&'HomeMyProfile'}></MyProfil> 
+                <div className={props.classname?'propschildrenhome':'propschildren'}>
                     {props.children}
                 </div>
             </div>

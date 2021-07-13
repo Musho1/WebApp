@@ -43,6 +43,7 @@ input::placeholder{
     height: 30px;
     border-radius: 5px;
     margin-top: 10px;
+    outline: none;
     position: relative;
 }
 .buttondivLogin button:hover{

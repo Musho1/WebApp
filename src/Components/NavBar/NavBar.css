@@ -32,8 +32,17 @@ li{
 .NavBar button{
     display: none;
 }
+.navMobile{
+    display: none;
+}
 
 @media only screen and (max-width: 600px) {
+    .navMobile{
+        display: block;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
     .NavBar button {
         display: block;
         margin: auto;
@@ -54,9 +63,16 @@ li{
     }
     ul{
         display: none;
+        margin: 0;
+    
+    }
+    li{
+        margin-top:-20px ;
     }
     .NavBar{
         display: flex;
-        justify-content: start;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
   }

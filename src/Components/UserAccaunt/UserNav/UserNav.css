@@ -1,0 +1,34 @@
+.UserNav{
+    margin-top: 70px !important;
+    margin-bottom: 50px !important;
+    width: 90%;
+    height: 45px;
+    margin: auto;
+    border: 1px solid #a200ff;
+}
+.UserNav ul li{
+    color: #a200ff;
+}
+.UserNav ul li i{
+    color: #a200ff;
+}
+.mobileusernav{
+    display: none;
+}
+a{
+    color: #a200ff;
+}
+@media only screen and (max-width: 600px) {
+    .mobileusernav{
+        width: 100%;
+        display: block;
+        display: flex;
+    }
+    .usernav{
+        display: none;
+    }
+    .mobileusernav li{
+        width: 20px;
+        height: 20px;
+    }
+  }

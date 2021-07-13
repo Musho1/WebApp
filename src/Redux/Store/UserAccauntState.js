@@ -1,3 +1,5 @@
 export default {
-    useraccauntdata:{}
+    useraccauntdata:{},
+    loadingUserAccaunt:false,
+    friend:null
 }

@@ -1,21 +1,21 @@
-import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './NavBar.css'
 function NavBar(){
     const history=useHistory()
-    const dispatch=useDispatch()
     const LogOut=()=>{
         sessionStorage.removeItem('uid')
         history.push('/')
-
+        window.location.reload(false);
     }
-
     return <div className="NavBar">
-        <button><i className="fas fa-bars"></i></button>
         <nav className="NavBar">
             <ul>
-                <li> <i className="fas fa-home"></i> Home</li>
+                <li> 
+                    <Link className="link" to="/profile">
+                        <i className="fas fa-home"></i> Home
+                    </Link>
+                </li>
                 <li>
                     <Link className="link" to='/photos'>
                         <i className="far fa-image"></i> Photos
@@ -34,6 +34,30 @@ function NavBar(){
                     </Link>
                 </li>
                 <li className='logOut' onClick={()=>LogOut()}>Log out <i className="fas fa-sign-out-alt"></i> </li>
+            </ul>
+
+
+
+            <ul className="navMobile">
+                <li>
+                    <Link to="/profile"><i className="fas fa-home"></i></Link>
+                </li>
+                <li>
+                    <Link to="/photos"><i className="far fa-image"></i></Link>
+                </li>
+                <li>
+                    <Link to="settings"><i className="fas fa-cogs"></i></Link>
+                </li>
+                <li>
+                    <Link className="link" to="search">
+                        <i className="fas fa-search"></i>
+                    </Link>
+                </li>
+                <li className='logOut' onClick={()=>LogOut()}><i className="fas fa-sign-out-alt"></i> </li>
+
+                {/* <li>
+                    <Link><i class="far fa-comment"></i></Link>
+                </li> */}
             </ul>
         </nav>
     </div>
