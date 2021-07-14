@@ -1,13 +1,13 @@
 import firebase from "firebase";
 const firebaseConfig = {
-    apiKey: "AIzaSyCC5FvHgYsXxGiasKMwplNeM5Loit4loc8",
-    authDomain: "webapp-e27c6.firebaseapp.com",
-    projectId: "webapp-e27c6",
-    storageBucket: "webapp-e27c6.appspot.com",
-    messagingSenderId: "760318849270",
-    appId: "1:760318849270:web:0c508c7cb0385fc82d3cd7",
-    measurementId: "G-N23XH35Q6X"
-  };
+  apiKey: "AIzaSyD0rdLFXpYTbt7LvgtD8M0HF7S4x0a735U",
+  authDomain: "webapp-c6850.firebaseapp.com",
+  projectId: "webapp-c6850",
+  storageBucket: "webapp-c6850.appspot.com",
+  messagingSenderId: "640269647417",
+  appId: "1:640269647417:web:1a5575e65a34c572acd7e8",
+  measurementId: "G-6QY4HVY9M2"
+};
 
 firebase.initializeApp(firebaseConfig);
 let storage = firebase.storage().ref(`images/`)

@@ -7,6 +7,7 @@ import { following, GetUserAcccauntByUid, unfollowing} from "../../Redux/Action/
 import "./UserAccaunt.css"
 import UserNav from './UserNav/UserNav'
 import NavBar from "../NavBar/NavBar"
+import Comments from '../Comments/Comments'
 
 
 function UserAccaunt(props){
@@ -90,6 +91,13 @@ function UserAccaunt(props){
             <div>
                 <UserNav></UserNav>
             </div>
+
+            <div>
+                <Comments></Comments>
+            </div>
+
+
+
             <div className="useraccauntpropschildren">
                 {props.children}
             </div>
